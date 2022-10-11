@@ -1,1 +1,1 @@
-# Projetc
+# Jamytraillette - Discord BOT
