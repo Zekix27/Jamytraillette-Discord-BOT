@@ -1,0 +1,24 @@
+{
+  "name": "jamytraillette-discord-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./deploy-commands.js & node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zekix27/Jamytraillette-Discord-BOT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zekix27/Jamytraillette-Discord-BOT/issues"
+  },
+  "homepage": "https://github.com/Zekix27/Jamytraillette-Discord-BOT#readme",
+  "dependencies": {
+    "discord.js": "^14.6.0",
+    "dotenv": "^16.0.3"
+  }
+}
