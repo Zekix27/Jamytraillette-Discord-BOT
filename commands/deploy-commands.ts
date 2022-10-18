@@ -5,12 +5,16 @@ import { JamytrailletteSlashCommandBuilder } from '@class/JamytrailletteSlashCom
 require('dotenv').config();
 
 const commands = [];
-const commandsPath = path.join(__dirname, 'commands');
-const commandsFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
+const commandsPath = path.join(__dirname, "../commands/");
+const commandsFiles = fs
+    .readdirSync(commandsPath)
+    .filter((file) => file.endsWith("Command"));
 
 for (const file of commandsFiles.flat()) {
-    const filePath = path.join(commandsPath, file);
-    const command: JamytrailletteSlashCommandBuilder = require(filePath).command;
+    const folderPath = path.join(commandsPath, file);
+    const filePath = path.join(folderPath, fs.readdirSync(folderPath)[0]);
+    const command: JamytrailletteSlashCommandBuilder =
+        require(filePath).command;
     commands.push(command.data.toJSON());
 }
 

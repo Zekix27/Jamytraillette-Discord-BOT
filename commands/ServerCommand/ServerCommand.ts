@@ -6,7 +6,7 @@ export class ServerCommand implements JamytrailletteSlashCommandBuilder {
 		.setName('server')
 		.setDescription('Replies with server info!');
 	execute = async (interaction: ChatInputCommandInteraction): Promise<void> => {
-		await interaction.reply(`Server name: ${interaction.guild?.name}\nTotal members: ${interaction.guild?.memberCount}\nCreated  at: ${interaction.guild?.createdAt}\nVerification level: ${interaction.guild?.verificationLevel}`);
+		await interaction.reply({ content: `Server name: ${interaction.guild?.name}\nTotal members: ${interaction.guild?.memberCount}\nCreated  at: ${interaction.guild?.createdAt}\nVerification level: ${interaction.guild?.verificationLevel}`, ephemeral: true });
 	};
 };
 

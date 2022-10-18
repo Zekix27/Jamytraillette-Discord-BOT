@@ -6,7 +6,7 @@ export class UserCommand implements JamytrailletteSlashCommandBuilder {
 		.setName('user')
 		.setDescription('Replies with user info!');
 	execute = async (interaction: ChatInputCommandInteraction): Promise<void> => {
-		await interaction.reply(`Your tag: ${interaction.user.tag}\nYour id: ${interaction.user.id}`);
+		await interaction.reply({ content: `Your tag: ${interaction.user.tag}\nYour id: ${interaction.user.id}`, ephemeral: true });
 	};
 };
 
