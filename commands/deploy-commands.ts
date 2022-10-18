@@ -8,7 +8,7 @@ const commands = [];
 const commandsPath = path.join(__dirname, 'commands');
 const commandsFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 
-for (const file of commandsFiles) {
+for (const file of commandsFiles.flat()) {
     const filePath = path.join(commandsPath, file);
     const command: JamytrailletteSlashCommandBuilder = require(filePath).command;
     commands.push(command.data.toJSON());
