@@ -1,8 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { Collection, GatewayIntentBits } from 'discord.js';
-import { JamytrailletteClient } from './class/JamytrailletteClient';
-import { JamytrailletteSlashCommandBuilder } from 'class/JamytrailletteSlashCommandBuilder';
+import { JamytrailletteClient } from '@class/JamytrailletteClient';
+import { JamytrailletteSlashCommandBuilder } from '@class/JamytrailletteSlashCommandBuilder';
 require('dotenv').config();
 
 const client = new JamytrailletteClient({ intents: [GatewayIntentBits.Guilds] });

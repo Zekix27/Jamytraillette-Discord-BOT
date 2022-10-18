@@ -1,4 +1,4 @@
-import { JamytrailletteClient } from "class/JamytrailletteClient";
+import { JamytrailletteClient } from "@class/JamytrailletteClient";
 import { ActivityType } from 'discord.js';
 
 module.exports = {

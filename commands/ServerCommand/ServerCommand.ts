@@ -1,4 +1,4 @@
-import { JamytrailletteSlashCommandBuilder } from "../class/JamytrailletteSlashCommandBuilder";
+import { JamytrailletteSlashCommandBuilder } from "@class/JamytrailletteSlashCommandBuilder";
 import { ChatInputCommandInteraction, SlashCommandBuilder } from "discord.js";
 
 export class ServerCommand implements JamytrailletteSlashCommandBuilder {

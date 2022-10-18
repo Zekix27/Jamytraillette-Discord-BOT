@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { REST, Routes }from 'discord.js';
-import { JamytrailletteSlashCommandBuilder } from 'class/JamytrailletteSlashCommandBuilder';
+import { JamytrailletteSlashCommandBuilder } from '@class/JamytrailletteSlashCommandBuilder';
 require('dotenv').config();
 
 const commands = [];
