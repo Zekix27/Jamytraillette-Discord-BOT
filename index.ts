@@ -1,9 +1,11 @@
-const fs = require('node:fs');
-const path = require('node:path');
-const { Client, Collection, GatewayIntentBits } = require('discord.js');
+import fs from 'node:fs';
+import path from 'node:path';
+import { Collection, GatewayIntentBits } from 'discord.js';
+import { JamytrailletteClient } from './class/JamytrailletteClient';
+import { JamytrailletteSlashCommandBuilder } from 'class/JamytrailletteSlashCommandBuilder';
 require('dotenv').config();
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new JamytrailletteClient({ intents: [GatewayIntentBits.Guilds] });
 
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
@@ -11,7 +13,7 @@ const commandsFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith(
 
 for (const file of commandsFiles) {
 	const filePath = path.join(commandsPath, file);
-	const command = require(filePath);
+	const command: JamytrailletteSlashCommandBuilder = require(filePath).command;
 	client.commands.set(command.data.name, command);
 }
 
@@ -24,7 +26,7 @@ for (const file of eventsFiles) {
 	if (event.once) {
 		client.once(event.name, (...args) => event.execute(...args));
 	} else {
-		client.on(event.name, (...args) => event.execute(...args));
+		client.on(event.name, (...args) => event.execute(...args, client));
 	}
 }
 

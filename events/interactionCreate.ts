@@ -1,9 +1,12 @@
+import { JamytrailletteClient } from "class/JamytrailletteClient";
+import { CommandInteraction } from "discord.js";
+
 module.exports = {
     name: 'interactionCreate', 
-    async execute(interaction) {
+    async execute(interaction: CommandInteraction, client: JamytrailletteClient) {
     if (!interaction.isChatInputCommand()) return;
 
-	const command = interaction.client.commands.get(interaction.commandName);
+	const command = client.commands.get(interaction.commandName);
 
 	if (!command) return;
 
