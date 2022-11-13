@@ -14,19 +14,20 @@ export class PingCommand implements JamytrailletteSlashCommandBuilder {
     ): Promise<void> => {
 		await interaction.reply({ content: '*Pinging...*', fetchReply: true })
 
-        const exampleEmbed = new EmbedBuilder()
+        const pingEmbed = new EmbedBuilder()
             .setColor(0xF00900)
 			.setTitle(`<:nerd:1041406376276148297>   *${interaction.client.ws.ping}* ms   <:nerd:1041406376276148297>`)
             .setAuthor({
                 name: interaction.user.username,
                 iconURL: interaction.user.avatarURL() ?? "", // defaut url
             })
+            .setTimestamp()
             .setFooter({
                 text: 'Jamytraillette',
                 iconURL: interaction.client.user.avatarURL() ?? '',
             });
 
-        await interaction.editReply({ embeds: [exampleEmbed], content: '' });
+        await interaction.editReply({ embeds: [pingEmbed], content: '' });
     };
 }
 
