@@ -1,11 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { REST, Routes }from 'discord.js';
+import { REST, Routes } from 'discord.js';
 import { JamytrailletteSlashCommandBuilder } from '@class/JamytrailletteSlashCommandBuilder';
 require('dotenv').config();
 
 const commands = [];
-const commandsPath = path.join(__dirname, "../commands/");
+const commandsPath = path.join(__dirname);
 const commandsFiles = fs
     .readdirSync(commandsPath)
     .filter((file) => file.endsWith("Command"));
